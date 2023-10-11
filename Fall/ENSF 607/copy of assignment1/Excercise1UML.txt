@@ -1,0 +1,44 @@
+@startuml
+
+class Drawing [[java:Drawing]] {
+	~lines: LinkedHashSet<Line>
+	+drawPolygon(lines: LinkedHashSet<Line>): void
+	-perimeter(p: Polygon): double
+	+{static} main(args: String[]): void
+}
+
+class Line [[java:Line]] {
+	~start: Point
+	~end: Point
+	-{static} classID: int
+	-objID: int
+	+Line(a: Point, b: Point)
+	+distance(): double
+	+toString(): String
+}
+
+class Point [[java:Point]] {
+	-x: int
+	-y: int
+	+Point(x: int, y: int)
+	+{static} distance(a: Point, b: Point): double
+	+toString(): String
+}
+
+class Polygon [[java:Polygon]] {
+	-polygon: LinkedHashSet<Line>
+	-objID: int
+	-{static} classID: int
+	~it: Iterator<Line>
+	+Polygon(polygon: LinkedHashSet<Line>)
+	+getLine(): Iterator<Line>
+	+{static} classID(): int
+	+toString(): String
+}
+
+Drawing <- Polygon: uses
+Polygon <- Line: uses
+Line <- Point: uses
+
+@enduml
+

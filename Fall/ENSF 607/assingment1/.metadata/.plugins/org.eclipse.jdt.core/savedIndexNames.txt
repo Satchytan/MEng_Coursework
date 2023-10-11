@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+/Users/satchy/Developer/MENG/Fall/ENSF 607/assingment1/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+3728554884.index
+3667797390.index

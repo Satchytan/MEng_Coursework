@@ -1,0 +1,79 @@
+@startuml
+
+class Tool {
+  - id: int
+  - name: string
+  - quantity: int
+  - price: float
+  - supplier_id: int
+  + Tool()
+  + getId(): int
+  + setId(id: int): void
+  + getName(): string
+  + setName(name: string): void
+  + getQuantity(): int
+  + setQuantity(quantity: int): void
+  + getPrice(): float
+  + setPrice(price: float): void
+  + getSupplierId(): int
+  + setSupplierId(supplier_id: int): void
+  + checkQuantity(): void
+  + generateOrder(): Order
+}
+
+class Supplier {
+  - id: int
+  - company_name: string
+  - address: string
+  - sales_contact: string
+  + Supplier()
+  + getId(): int
+  + setId(id: int): void
+  + getCompanyName(): string
+  + setCompanyName(company_name: string): void
+  + getAddress(): string
+  + setAddress(address: string): void
+  + getSalesContact(): string
+  + setSalesContact(sales_contact: string): void
+}
+
+class InventoryManager {
+  + addTool(tool: Tool): void
+  + deleteTool(tool: Tool): void
+  + searchByName(name: string): Tool[]
+  + searchById(id: int): Tool
+  + checkQuantity(): void
+  + generateOrder(): void
+  + createOrder(): Order
+  + writeOrderToFile(order: Order): void
+}
+
+class Order {
+  - order_id: string
+  - order_date: date
+  - supplier: Supplier
+  - items: Dictionary
+  + Order()
+  + getOrderId(): string
+  + setOrderId(order_id: string): void
+  + getOrderDate(): date
+  + setOrderDate(order_date: date): void
+  + getSupplier(): Supplier
+  + setSupplier(supplier: Supplier): void
+  + getItems(): Dictionary
+  + setItems(items: Dictionary): void
+}
+
+class FileReader {
+  + readData(): void
+}
+
+Tool -- Supplier: has
+Tool -- Order: generates
+InventoryManager -- Tool: manages
+InventoryManager -- FileReader: uses
+InventoryManager -- Order: creates
+Order -- Supplier: has
+Order -- Tool: contains
+
+@enduml

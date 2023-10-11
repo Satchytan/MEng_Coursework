@@ -1,0 +1,19 @@
+
+# Download python file and name it
+import numpy as np
+import my_module as mm
+from my_module import add, subtract
+import my_module
+!wget - O my_module.py https: // www.dropbox.com/scl/fi/pfwp2whlozs0ogyyr5kj2/my_module.py?rlkey = zcp1lvlqw80dwh6bnhs6b1yqh & dl = 0
+
+# Import and use functions
+
+result_add = my_module.add(5, 3)
+result_subtract = my_module.subtract(8, 2)
+
+print(result_add)        # Output: 8
+print(result_subtract)   # Output: 6
+
+# Import specific functions
+
+# Import and rename
