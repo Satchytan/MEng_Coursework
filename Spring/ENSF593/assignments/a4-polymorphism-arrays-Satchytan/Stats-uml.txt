@@ -1,0 +1,35 @@
+@startuml
+
+class StatsGUI {
+	-inputField: JTextField
+	-display: JTextArea
+	-reset: JButton
+	-displayStats: JButton
+	-stats: Stats
+	
+	+StatsGUI(title: String)
+	+actionPerformed(e: ActionEvent): void
+	+{static} main(args: String[]): void
+}
+
+
+interface ActionListener {
+}
+
+
+class Stats {
+	-grades: int[]
+	-count: int
+	
+	+Stats()
+	+add(grade: int): void
+	+getMean(): double
+	+sort(): void
+	+getMedian(): double
+	+toString(): String
+}
+
+ActionListener <|.. StatsGUI : uses-a
+StatsGUI --> Stats : uses-a
+
+@enduml

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;feetPerSecond&apos; in &apos;Sound.main(...)&apos; to &apos;FEET_PER_SCOND&apos;&#x0A;- Original project: &apos;l02&apos;&#x0A;- Original element: &apos;Sound.main(String[]).feetPerSecond&apos;&#x0A;- Renamed element: &apos;feetPerSecond&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;feetPerSecond&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Sound.java[Sound~main~\[QString;@feetPerSecond!122!152!132!144!I!16!false" name="FEET_PER_SCOND" references="true" stamp="1683563555101" version="1.0"/>
+</session>

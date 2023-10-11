@@ -1,0 +1,22 @@
+INDEX VERSION 1.132+/Users/satchy/Developer/ENSF593/my-work/.metadata/.plugins/org.eclipse.jdt.core
+1714065526.index
+1872551005.index
+3854391238.index
+3534701419.index
+112727847.index
+3126713159.index
+836533852.index
+2104310880.index
+2019321134.index
+3141775227.index
+4118765929.index
+1114945366.index
+4280533452.index
+1392654315.index
+257643960.index
+2403939651.index
+288202976.index
+412871883.index
+1865797976.index
+2284122458.index
+569993388.index

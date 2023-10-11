@@ -1,0 +1,66 @@
+@startuml
+class DataAnalysisCLI [[java:DataAnalysisCLI]] {
+	-data: DataFrame
+	-cli: InteractiveCLI
+	+DataAnalysisCLI()
+	+run(): void
+	+{static} main(args: String[]): void
+}
+
+
+class InteractiveCLI [[java:InteractiveCLI]] {
+	-reader: Scanner
+	+InteractiveCLI()
+	+getKeyboardInteger(): int
+	+getKeyboardDouble(): double
+	+getKeyboardString(): String
+	+prompt(s: String): void
+	+display(s: String): void
+}
+
+
+class DataSeries [[java:DataSeries]] {
+	-label: String
+	-data: double[]
+	-count: int
+	+DataSeries(label: String)
+	+add(value: double): void
+	+size(): int
+	+getMin(): double
+	+getMax(): double
+	+getSum(): double
+	+getMean(): double
+	+toString(): String
+}
+
+interface IBasicStats [[java:IBasicStats]] {
+	getMin(): double
+	getMax(): double
+	getSum(): double
+	getMean(): double
+}
+
+interface Scanner
+
+
+class DataFrame [[java:DataFrame]] {
+	-headerNames: String[]
+	-dataRows: double[][]
+	-numOfRows: int
+	-numOfCols: int
+	+DataFrame(fileName: String)
+	+getHeaderNames(): String[]
+	+getNumOfRows(): int
+	+getNumOfCols(): int
+	+getColumnByIndex(columnIndex: int): DataSeries
+	+toString(): String
+}
+
+DataFrame --|> DataSeries: has-a
+IBasicStats <|.. DataSeries: implements
+DataAnalysisCLI --|> InteractiveCLI: has-a
+DataAnalysisCLI --|> DataFrame: has-a
+InteractiveCLI --|> Scanner: uses-a
+
+@enduml
+

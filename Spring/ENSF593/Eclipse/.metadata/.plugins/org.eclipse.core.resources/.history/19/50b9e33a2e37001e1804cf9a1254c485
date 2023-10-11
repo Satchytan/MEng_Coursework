@@ -1,0 +1,56 @@
+package myLibrary.GraphAlgo;
+
+import java.util.Arrays;
+
+
+public class BFS 
+{
+	
+	// Define BFS 
+    private int numVertices;
+    private int[][] adjMatrix;
+    private boolean[] visited;
+    
+    public BFS(int numVertices) {
+        this.numVertices = numVertices;
+        adjMatrix = new int[numVertices][numVertices];
+        visited = new boolean[numVertices];
+    }
+ 
+	// You can use either adjacency matrix or adjacency list to keep track of the graph
+	
+	// Add edge to graph
+    public void addEdge(int v,int w)
+    {
+        adjMatrix[v][w] = 1;
+        adjMatrix[w]v] = 1;
+
+    }
+ 
+    // Apply BFS algorithm and display the nodes visited and the visit array values
+    public void BFS_Algo(int n)
+    {
+    	Arrays.fill(visited, false);
+
+        int[] queue = new int[numVertices];
+        int front = -1, rear = -1;
+
+        visited[n] = true;
+        queue[++rear] = n;
+
+        while (front != rear) {
+            int current = queue[++front];
+            System.out.print(current + " - ");
+
+            for (int i = 0; i < numVertices; i++) {
+                if (adjMatrix[current][i] == 1 && !visited[i]) {
+                    visited[i] = true;
+                    queue[++rear] = i;
+                }
+            }
+        }
+        System.out.println("\nVisited Nodes: " + Arrays.toString(visited));
+    }
+	
+	// Add any other parts needed
+}

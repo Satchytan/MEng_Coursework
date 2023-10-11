@@ -1,0 +1,41 @@
+
+@startuml
+
+class NewtonSolver {
+- initialGuess: double
+- maxError: double
+- iterations: int
+
++ NewtonSolver(maxError: double, initialGuess: double)
++ sqrt(N: double): double
++ getIterations(): int
+
+}
+
+
+class NewtonApp {
+- cli: IntractiveCLI
+
++ NewtonApp()
++run(): void
++ main(args: String[]): void
+
+}
+
+class InteractiveCLI{
+- reader: Scanner
+
++ InteractiveCLI()
++ getKeyboardInteger(): int
++ getKeyboardDouble(): double
++ prompt(s: String): void
++ display(s: String): void
+
+}
+
+
+NewtonApp --> NewtonSolver : uses
+NewtonApp --> InteractiveCLI : uses
+NewtonApp *-- InteractiveCLI : has-a
+
+@enduml

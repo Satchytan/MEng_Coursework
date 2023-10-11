@@ -1,0 +1,16 @@
+@startuml
+class Line1D{
+
+- start : double
+- end : double
+
++ Line1D()
+
++ Line1D(s: double, e: double)
++ toString() : String
++ length() : double
++ static main() : void
+
+}
+
+@enduml

@@ -1,0 +1,19 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class Sorting {
+	
+	void selectionSort (int [] a) {
+		
+	}
+	
+	int partition (int[] a, int first, int last) {
+		
+	}
+	
+	void quickSort (int[] a, int first, int last) {
+		
+	}
+
+}

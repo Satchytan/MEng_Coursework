@@ -1,0 +1,64 @@
+@startuml
+
+abstract class Shape2D {
+	- width: double
+	- height: double
+
+	+ Shape2D()
+	+ Shape2D(w: double, h: double)
+	+ getWidth(): double
+	+ setWidth(w: double): void
+	+ getHeight(): double
+	+ setHeight(h: double): void
+	+ toString(): String
+	+ getCircumference(): double
+	+ getArea(): double
+
+
+}
+
+
+class Rectangle {
+	- referencePoint: Point2D
+	
+	+ Rectangle()
+	+ Rectangle(w: double, h: double)
+	+ getCircumference(): double
+	+ getArea(): double
+	+ getReferencePoint(): Point2D
+	+ setReferencePoint(p: Point2D): void
+	+ getAllShapePoints(): Point2D[]
+}
+
+
+class Square {
+	+ Square()
+	+ Square(l: double)
+	+ setWidth(w: double): void
+	+ setHeight(h: double): void
+	+ getCircumference(): double
+	+ getArea(): double
+}
+
+
+class RightTriangle {
+	+ RightTriangle()
+	+ RightTriangle(w: double, h: double)
+	+ getCircumference(): double
+	+ getArea(): double
+}
+
+
+interface IShapePoints {
+	getReferencePoint(): Point2D
+	setReferencePoint(p: Point2D): void
+	getAllShapePoints(): Point2D[]
+}
+
+
+IShapePoints <|.. Rectangle: uses-a
+Shape2D <|-- RightTriangle: is-a
+Shape2D <|-- Square: is-a
+Shape2D <|-- Rectangle: is-a
+
+@enduml

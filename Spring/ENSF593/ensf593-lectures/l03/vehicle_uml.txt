@@ -1,0 +1,11 @@
+@startuml
+class Vehicle{
+
+~ passenger : int
+~ fuelcap : int
+~ mpg : int
+
+~ Vehicle(p : int, f : int, m: int)
+~ range() : int
+}
+@enduml

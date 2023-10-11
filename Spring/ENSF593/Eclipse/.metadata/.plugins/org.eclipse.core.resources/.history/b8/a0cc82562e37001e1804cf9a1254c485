@@ -1,0 +1,48 @@
+package myLibrary.GraphAlgo;
+
+import java.util.Arrays;
+
+
+public class DFS {
+
+	// Define BFS 
+	private int numVertices;
+    private int[][] adjMatrix;
+    private boolean[] visited;
+
+    public DFS(int numVertices) {
+        this.numVertices = numVertices;
+        adjMatrix = new int[numVertices][numVertices];
+        visited = new boolean[numVertices];
+    }
+	 
+	// You can use either adjacency matrix or adjacency list to keep track of the graph
+		
+	// Add edge to graph
+    void addEdge(int v, int w)
+    {
+        adjMatrix[v][w] = 1;
+    }
+ 
+    // Apply DFS algorithm and display the nodes visited and the visit array values
+    // See the sample output to create a proper format
+    void DFS_Algo(int v)
+    {
+        Arrays.fill(visited, false);
+
+        DFSUtil(v);
+        System.out.println("\nVisited Nodes: " + Arrays.toString(visited));
+    }
+    
+    // Add any other parts needed
+    private void DFSUtil(int v) {
+        visited[v] = true;
+        System.out.print(v + " - ");
+
+        for (int i = 0; i < numVertices; i++) {
+            if (adjMatrix[v][i] == 1 && !visited[i]) {
+                DFSUtil(i);
+            }
+        }
+    }
+}

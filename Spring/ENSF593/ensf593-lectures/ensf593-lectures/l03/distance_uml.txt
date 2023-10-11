@@ -1,0 +1,10 @@
+@startuml
+class Distance{
+
+~ miles : int
+
+~ toKilometers() : int
+~ toMiles() : int
+
+}
+@enduml

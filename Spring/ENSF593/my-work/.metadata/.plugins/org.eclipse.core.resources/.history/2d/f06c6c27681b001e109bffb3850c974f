@@ -1,0 +1,77 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class Sorting {
+	
+	void selectionSort (int [] a) {
+		for(int i = 0; i < a.length-1; i++)
+		{
+		// Find the minimum element
+		int min = i;
+		for(int j = i + 1; j < a.length ; j++)
+		{
+		if(a[j] < a[min])
+		{
+		min = j;
+		}
+		}
+		//Swap items
+		int temp = a[min];
+		a[min] = a[i];
+		a[i] = temp;
+		}
+	}
+	
+	int partition (int[] a, int first, int last) {
+		int pivot = a[last];
+		int i = (first - 1);
+		for (int j = first; j <= last - 1; j++)
+		{
+		if (a[j] < pivot)
+		{
+		i++;
+		int temp = a[i]; //swap(a, i, j);
+		a[i] = a[j];
+		a[j] = temp;
+		}
+		}
+		int temp1 = a[i+1]; //swap(a, i+1, last);
+		a[i+1] = a[last];
+		a[last] = temp1;
+		return (i + 1);
+	}
+	
+	void quickSort (int[] a, int first, int last) {
+		if (first < last)
+		{
+		int p = partition(a, first, last);
+		quickSort(a, first, p - 1);
+		quickSort(a, p + 1, last);
+		}
+	}
+	
+	public void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Enter the size of the array:");
+		int numElements = scanner.nextInt();
+		int[] arr = new int[numElements];
+		
+        System.out.print("Enter the elements in the array: ");
+        for (int i = 0; i < numElements; i++) {
+        	arr[i] = scanner.nextInt();
+        }
+        
+        System.out.println("The elements of the Array are");
+        System.out.println(arr);
+        
+       scanner.close();
+       
+       selectionSorted = selectionSort(arr);
+       
+       
+       System.out.print("Sorted Array (Selection Sort - Descending Order): " + );
+	}
+
+}

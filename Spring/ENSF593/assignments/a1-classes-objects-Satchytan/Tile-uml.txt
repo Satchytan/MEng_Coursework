@@ -1,0 +1,14 @@
+@startuml
+
+class Tile{
++ letter: char
++ value: int
+
+~ Tile(l: char, v: int)
+~ Tile()
+
++ toString(): String
++ equals(other): boolean
++ main(args.String[]) : void
+}
+@enduml
